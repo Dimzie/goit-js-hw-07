@@ -22,21 +22,11 @@ const addImageInList = imagesList => {
 
 galleryListEl.insertAdjacentHTML("afterbegin", addImageInList(galleryItems));
 
-galleryListEl.addEventListener("click", onItemsGalleryListClick);
-
-function onItemsGalleryListClick(evt) {
-    evt.preventDefault();
-    if(evt.target.nodeName !== "IMG") {
-        return;
-    }
-    console.log(evt.target);
-
-    new SimpleLightbox(".gallery a", {
-        captions: true,
-        captionType: "attr",
-        captionsData: "alt",
-        captionPosition: "bottom",
-        captionSelecor: "img a",
-        captionDelay: 250,
-    });
-}
+new SimpleLightbox(".gallery a", {
+    captions: true,
+    captionType: "attr",
+    captionsData: "alt",
+    captionPosition: "bottom",
+    captionSelecor: "img a",
+    captionDelay: 250,
+});
